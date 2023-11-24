@@ -1,12 +1,12 @@
 # PHP LDAP Admin
-location ~ ^/phpldapadmin(.*)\.php$ {
+location ~ ^/pla(.*)\.php$ {
     include /etc/nginx/templates/hsts.tmpl;
     include /etc/nginx/templates/fastcgi_php.tmpl;
-    fastcgi_param SCRIPT_FILENAME /usr/share/phpldapadmin$1.php;
+    fastcgi_param SCRIPT_FILENAME /opt/pla$1.php;
 }
 
-location ~ ^/phpldapadmin(.*) {
-    alias /usr/share/phpldapadmin$1;
+location ~ ^/pla(.*) {
+    alias /opt/pla$1;
     index index.php;
 }
 
